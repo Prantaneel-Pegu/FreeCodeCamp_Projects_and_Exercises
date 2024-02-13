@@ -1,0 +1,96 @@
+<!-- Author: Prantaneel Pegu
+     Date of Project Submission: 08-02-2024 (dd-mm-yyyy) -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet">
+        <title>freeCodeCamp Survey</title>
+    </head>
+
+    <body>
+         
+        <main>
+        <h1 id="title">freeCodeCamp Survey Form</h1>
+        <p id="description">Thank you for taking the time to help us improve the platform</p>
+
+            <div id="form-body">
+                <form action="" id="survey-form">
+
+                    <fieldset>
+                        <label id="name-label" for="name">Name
+                            <input class="inputMod1" id="name" type="text" placeholder="Enter your name" required>
+                        </label>
+
+                        <label id="email-label" for="email">Email
+                            <input class="inputMod1" type="email" id="email" placeholder="Enter your email address" required>
+                        </label>
+
+                        <label id="number-label" for="number">Age
+                            <input class="inputMod1" type="number" id="number" placeholder="Age" min="15" max="120">
+                        </label>
+
+                        <label for="dropdown">Which option best describes your current role?
+                        <select class="inputMod1" id="dropdown">
+                            <option class="placeholder-option" selected disabled>Select current role</option>
+                            <option>Student</option>
+                            <option>Full time learner</option>
+                            <option>Full time job</option>
+                            <option>Prefer not to say</option>
+                            <option>Other</option>
+                        </select>
+                        </label>
+
+                        <label id="recommend-label">Would you recommend freeCodeCamp to a friend?
+                            <label id="rec1">
+                                <input name="recommend" value="Definitely" type="radio" checked> Definitely
+                            </label>
+                            <label id="rec2">
+                                <input name="recommend" value="Maybe" type="radio"> Maybe
+                            </label>
+                            <label id="rec3">
+                                <input name="recommend" value="Not sure" type="radio"> Not sure
+                            </label>
+                        </label>
+
+                        <label id="fav-feature">What is your favorite feature of freeCodeCamp?
+                            <select class="inputMod1" id="feature-dropdown" name="favorite-feature">
+                                <option selected disabled>Select an option</option>
+                                <option value="Challenges">Challenges</option>
+                                <option value="Projects">Projects</option>
+                                <option value="Community">Community</option>
+                                <option value="Certifications">Certifications</option>
+                                <option value="YT Channel">Youtube Channel</option>
+                                <option value="Open Source">Open Source</option>
+                            </select>
+                        </label>
+
+                        <p>What would you like to see improved? (Check all that apply)</p>
+
+                            <label class="improved"><input value="Front-end Projects" type="checkbox">Front-end Projects</label>
+                            <label class="improved"><input value="Back-end Projects" type="checkbox">Back-end Projects</label>
+                            <label class="improved"><input value="Data Visualization" type="checkbox">Data Visualization</label>
+                            <label class="improved"><input value="Challenges" type="checkbox">Challenges</label>
+                            <label class="improved"><input value="Open Source Community" type="checkbox">Open Source Community</label>
+                            <label class="improved"><input value="Wiki" type="checkbox">Wiki</label>
+                            <label class="improved"><input value="Videos" type="checkbox">Videos</label>
+                            <label class="improved"><input value="Forum" type="checkbox">Forum</label>
+
+                        <p>Any comments or suggestions?</p>
+                        <textarea id="comments-and-suggestions" name="comments-and-suggestions" placeholder="Enter your comments here..." rows="6"></textarea>
+
+                        <button id="submit" type="submit">Submit</button>
+
+                    </fieldset>
+                </form>
+
+            </div>
+        </main>
+
+
+    </body>
+</html>
