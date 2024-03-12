@@ -1,0 +1,64 @@
+/* Import Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+}
+
+:root{
+    --text-color: hsl(214, 74%, 7%);
+    --primary-color: hsl(212, 23%, 53%); 
+    --secondary-color: hsl(211, 29%, 74%);
+    --accent-color: hsl(211, 36%, 62%);
+    --font-1: "Poppins";
+    --font-2: "Anek Kannada";
+}
+
+body{
+    font-family: var(--font-1), var(--font-2), serif;
+    color: var(--text-color);
+    background-color: var(--secondary-color)
+
+}
+
+#header{
+    background-color: var(--primary-color);
+    text-align: center;
+    margin: 10px 0;
+    padding: 40px 0 20px;
+}
+
+#img-div{
+    margin: 60px auto 20px;
+    text-align: center;
+}
+
+#img-caption{
+    font-style: italic;
+    font-size: 14px;
+}
+
+#image{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+#tribute-info{
+    max-width: 1100px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+#footer{
+    background-color: var(--accent-color);
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px 16px 25px;
+    min-height: 70px
+}
