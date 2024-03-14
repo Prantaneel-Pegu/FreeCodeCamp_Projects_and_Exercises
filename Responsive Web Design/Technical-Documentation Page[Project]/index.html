@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Technical Documentation Page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+    
+        <nav id="navbar">
+
+            <header id="nav-header">Async JS Documentation</header>
+            <a href="#Asynchronous_JavaScript" class="nav-link"><p>Asynchronous JavaScript</p></a>
+            <a href="#Introducing_asynchronous_JavaScript" class="nav-link"><p>Introducing asynchronous JavaScript</p></a>
+            <a href="#Synchronous_programming" class="nav-link"><p>Synchronous programming</p></a>
+            <a href="#How_to_use_promises" class="nav-link"><p>How to use promises</p></a>
+            <a href="#Using_the_fetch()_API" class="nav-link"><p>Using the <code>fetch()</code> API</p></a>
+            <a href="#How_to_implement_a_promise-based_API" class="nav-link"><p>How to implement a promise-based API</p></a>
+
+        </nav>
+
+        <main id="main-doc">
+
+            <section class="main-section" id="Asynchronous_JavaScript">
+                <header id="header-1">Asynchronous JavaScript</header>
+                <p>
+                    In this module, we take a look at asynchronous JavaScript, why it is important, and how it can be used to effectively handle potential blocking operations, such as fetching resources from a server.</p>
+                    
+                <p>
+                    Asynchronous JavaScript is a fairly advanced topic, and you are advised to work through "JavaScript first steps" and "JavaScript building blocks" modules before attempting this.</p>
+            </section>
+
+            <section class="main-section" id="Introducing_asynchronous_JavaScript">
+                <header id="header-2">Introducing asynchronous JavaScript</header>
+                <p>Asynchronous programming is a technique that enables your program to start a potentially long-running task and still be able to be responsive to other events while that task runs, rather than having to wait until that task has finished. Once that task has finished, your program is presented with the result.</p>
+
+                <p>Many functions provided by browsers, especially the most interesting ones, can potentially take a long time, and therefore, are asynchronous. For example:</p>               
+
+                <ul>
+                    <li>Making HTTP requests using <code>fetch()</code></li>
+                    <li>Accessing a user's camera or microphone using <code>getUserMedia()</code></li>
+                    <li>Asking a user to select files using <code>showOpenFilePicker()</code></li>
+                </ul>
+
+                <p>So even though you may not have to implement your own asynchronous functions very often, you are very likely to need to use them correctly.
+
+                    In this article, we'll start by looking at the problem with long-running synchronous functions, which make asynchronous programming a necessity.</p>
+
+            </section>
+
+            <section class="main-section" id="Synchronous_programming">
+                <header id="header-3">Synchronous programming</header>
+                <p>Consider the following code:</p>                
+
+                <div class="code-block">const name = "Miriam";
+                    <br>
+                    const greeting = `Hello, my name is ${name}!`;<br>
+                    console.log(greeting);<br>
+                    // "Hello, my name is Miriam!"</div>
+
+                <p>This code:</p>
+                <ol>
+                    <li>Declares a string called <code>name</code>.</li>
+                    <li>Declares another string called<code>greeting</code>, which uses <code>name</code>.</li>
+                    <li>Outputs the greeting to the JavaScript console.</li>
+                </ol>
+
+                <p>We should note here that the browser effectively steps through the program one line at a time, in the order we wrote it. At each point, the browser waits for the line to finish its work before going on to the next line. It has to do this because each line depends on the work done in the preceding lines.
+
+                    That makes this a synchronous program. It would still be synchronous even if we called a separate function, like this:</p>
+
+                <div class="code-block">function makeGreeting(name) {<br>
+                    return `Hello, my name is ${name}!`;<br>
+                  } <br>
+                  
+                  const name = "Miriam";<br>
+                  const greeting = makeGreeting(name);<br>
+                  console.log(greeting);<br>
+                  // "Hello, my name is Miriam!"</div>
+
+                  <p>Here, <code>makeGreeting()</code> is a synchronous function because the caller has to wait for the function to finish its work and return a value before the caller can continue.</p>
+
+            </section>
+
+            <section class="main-section" id="How_to_use_promises">
+                <header id="header-4">How to use promises</header>
+                <p><strong>Promises</strong> are the foundation of asynchronous programming in modern JavaScript. A promise is an object returned by an asynchronous function, which represents the current state of the operation. At the time the promise is returned to the caller, the operation often isn't finished, but the promise object provides methods to handle the eventual success or failure of the operation.</p>
+
+                <p>In the previous article, we talked about the use of callbacks to implement asynchronous functions. With that design, you call the asynchronous function, passing in your callback function. The function returns immediately and calls your callback when the operation is finished.
+
+                    With a promise-based API, the asynchronous function starts the operation and returns a Promise object. You can then attach handlers to this promise object, and these handlers will be executed when the operation has succeeded or failed.</p>
+            </section>
+
+            <section class="main-section" id="Using_the_fetch()_API">
+                <header id="header-5">Using the <code>fetch()</code> API</header>
+                <p>In this example, we'll download the JSON file from https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json, and log some information about it.
+
+                    To do this, we'll make an HTTP request to the server. In an HTTP request, we send a request message to a remote server, and it sends us back a response. In this case, we'll send a request to get a JSON file from the server. Remember in the last article, where we made HTTP requests using the XMLHttpRequest API? Well, in this article, we'll use the fetch() API, which is the modern, promise-based replacement for XMLHttpRequest.
+                    
+                    Copy this into your browser's JavaScript console:</p>
+
+                <div class="code-block">const fetchPromise = fetch(
+                    "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
+                  );<br>
+                  
+                  console.log(fetchPromise);<br>
+                  
+                  fetchPromise.then((response) => {<br>
+                    console.log(`Received response: ${response.status}`);<br>
+                  });<br>
+                  
+                  console.log("Started request…")</div>
+                  <p>Here we are:
+
+                    calling the fetch() API, and assigning the return value to the fetchPromise variable
+                    immediately after, logging the fetchPromise variable. This should output something like: Promise { <state>: "pending" }, telling us that we have a Promise object, and it has a state whose value is "pending". The "pending" state means that the fetch operation is still going on.
+                    passing a handler function into the Promise's then() method. When (and if) the fetch operation succeeds, the promise will call our handler, passing in a Response object, which contains the server's response.
+                    logging a message that we have started the request.
+                    The complete output should be something like:</p>
+
+                <div class="code-block">Promise { <state>: "pending" }
+                    Started request…<br>
+                    Received response: 200</div>
+
+                <p>Note that Started request… is logged before we receive the response. Unlike a synchronous function, fetch() returns while the request is still going on, enabling our program to stay responsive. The response shows the 200 (OK) status code, meaning that our request succeeded.
+
+                    This probably seems a lot like the example in the last article, where we added event handlers to the XMLHttpRequest object. Instead of that, we're passing a handler into the then() method of the returned promise.</p>
+            </section>
+
+            <section class="main-section" id="How_to_implement_a_promise-based_API">
+                <header id="header-6">How to implement a promise-based API</header>
+                <p class="last-paragraph">In the last article we discussed how to use APIs that return promises. Generally, when you implement a promise-based API, you'll be wrapping an asynchronous operation, which might use events, or plain callbacks, or a message-passing model. You'll arrange for a Promise object to handle the success or failure of that operation properly.
+                    <br><br><br>
+                    All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous">MDN</a>.
+                </p>
+            </section>
+
+        </main>
+
+
+    </body>
+
+</html>
