@@ -1,0 +1,155 @@
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root{
+    --primary-color: #000000;
+    --secondary-color: #ff0000;
+    --text-color-1: #fff
+}
+
+html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body{
+    background-color: var(--primary-color);
+    color: var(--text-color-1);
+    font-family: Inter, sans-serif;
+    max-width: 50em;
+    text-align: center;
+    margin: 0 auto;
+}
+
+section{
+    margin-bottom: 2rem;
+}
+
+h1{
+    margin-bottom: .5rem;
+}
+
+hr{
+    border-color: rgb(68, 65, 65);
+}
+
+
+
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: space-around;
+    background-color: transparent;
+    column-gap: 2rem;
+    border-bottom: 2px solid rgb(68, 65, 65);
+    margin: 0 auto;
+    z-index: 999;
+}
+
+#header-img{
+    width: 24px;
+    height: 24px;
+    margin: 1rem;
+}
+
+#nav-bar{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.nav-link{
+    text-decoration: none;
+    margin: 0 .4em;
+    color: #ff0000;
+}
+
+.main{
+    width: 100%;
+
+    margin-top: 5em;
+}
+
+.pre-order-text{
+    margin-top: 0;
+}
+
+#email{
+    height: 1.3rem;
+}
+
+#benefits{
+    max-width: 20rem;
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+}
+
+.benefits__list{
+    text-align: left;
+    margin: 0 auto;
+    padding-inline-start: 35px;
+    color: yellow;
+}
+
+.sans-image{
+    position: absolute;
+    max-width: 110px;;
+    z-index: -1;
+    right: -1.7rem;
+    top: 12.5rem;
+    transform: rotate(-10deg);
+}
+
+#video{
+    max-width: 100%;
+    max-height: 10%;
+    height: auto;   
+    outline: 2px solid gray; 
+    width: 25.5rem;
+    height: 15rem;
+}
+
+#submit{
+    background-color: #ff0000;
+    height: 1.6rem;
+    border: none;
+    cursor: pointer;
+}
+
+.left-align{
+    text-align: left !important;
+}
+
+footer{
+    font-style: italic;
+    font-size: .7rem;
+    color: gray;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+/* Prevent overflow related bugs */
+@media (max-width: 400px){
+    .sans-image{
+        width: 90px;
+        right: .5rem;
+        top: 13.15rem;
+    }
+}
+
+@media (max-height: 729px){
+    .footer{
+        display: none;
+    }
+}
