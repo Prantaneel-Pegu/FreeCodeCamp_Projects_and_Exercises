@@ -1,0 +1,73 @@
+<!-- Author: Prantaneel Pegu
+     Created on 16/3/24
+     freeCodeCamp Project: Product Landing Page -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="assets/heart.ico">
+        <link rel="stylesheet" href="styles.css">
+        <title>Pre-order Undertale!</title>
+    </head>
+
+    <body>
+    
+        <header id="header">
+            <img src="assets/heart.ico" alt="Undertale heart icon" id="header-img">
+            <nav id="nav-bar" class="nav__bar">
+                <a href="#pre-order" class="nav-link"><p class="nav__item">Pre-order</p></a>
+                <a href="#benefits" class="nav-link"><p class="nav__item">Benefits</p></a>
+                <a href="#trailer" class="nav-link"><p class="nav__item">Trailer</p></a>
+            </nav>
+        </header>
+        
+
+        <main class="main">
+            
+            <section id="pre-order" class="pre__order">
+                <h1 class="pre-order-title">Pre-order Undertale now!</h1>
+                <form action="https://www.freecodecamp.com/email-submit" id="form" class="order__form">
+                    <label for="email">
+                        <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                    </label>
+                    <label for="submit">
+                        <input type="submit" id="submit">
+                        </label>
+                </form>
+            </section>
+
+            <section id="benefits" class="benefits">
+                <h1 class="benefits__heading">
+                    Benefits of Pre-ordering:
+                </h1>
+
+                <p class="pre-order-text">By pre-ordering, you will receive: </p>
+                <ol class="benefits__list left-align">
+                    <li class="benefits_list_item left-align">A limited-edition Sans figurine.</li>
+                    <li class="benefits_list_item left-align">A golden necklace with a photo of Frisk.</li>
+                    <li class="benefits_list_item left-align">The physical edition of the game guidebook.</li>
+                    <li class="benefits_list_item left-align">The game CD inside a special metal case.</li>
+                </ol>
+
+                <img src="assets/Sans.png" alt="Sans Image" class="sans-image">
+
+            </section>
+
+            <section id="trailer" class="trailer">
+                <h1 class="trailer__heading">Trailer: </h1>
+                <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/1Hojv0m3TqA?si=qf2PPYgiYxT_gs1i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </section>
+
+            <footer class="footer">
+                <hr>
+                <p class="footer__text">
+                    Note: This is a mock site for a freeCodeCamp project.
+                </p>
+            </footer>
+        </main>
+
+    </body>
+</html>
