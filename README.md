@@ -1,1 +1,1 @@
-This repo hosts my completed FreeCodeCamp exercises and certification projects. 
+This repository contains my completed FreeCodeCamp exercises and certification projects. 
